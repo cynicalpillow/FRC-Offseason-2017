@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team6135.robot.commands.DriveStraightDistance;
 import org.usfirst.frc.team6135.robot.commands.DriveTime;
+import org.usfirst.frc.team6135.robot.commands.SmartDashboardPrint;
 import org.usfirst.frc.team6135.robot.subsystems.Climber;
 import org.usfirst.frc.team6135.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team6135.robot.subsystems.GearIntake;
@@ -32,6 +33,7 @@ public class Robot extends IterativeRobot {
     public static Climber climber;
     public static GearIntake gearIntake;
     public static SendableChooser<Command> autoChooser;
+    //public static SmartDashboardPrint smartDashboardPrint;
 
 	Command autonomousCommand;
 //	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -133,6 +135,14 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putNumber("Climber speed", RobotMap.climberMotor.getSpeed());
+        //smartDashboardPrint = new SmartDashboardPrint();
+        SmartDashboard.putNumber("Left Encoder Distance", RobotMap.leftDriveEncoder.getDistance());
+        SmartDashboard.putNumber("Right Encoder Distance", RobotMap.rightDriveEncoder.getDistance());
+//        
+        SmartDashboard.putNumber("Left Encoder Velocity", RobotMap.leftDriveEncoder.getRate());
+        SmartDashboard.putNumber("Right Encoder Velocity", RobotMap.rightDriveEncoder.getRate());
+    
+        SmartDashboard.putBoolean("Climber on", Robot.climber.isOn);
     }
 
     /**

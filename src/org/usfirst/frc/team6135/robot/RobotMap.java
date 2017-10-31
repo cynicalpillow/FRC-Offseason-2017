@@ -36,14 +36,14 @@ public class RobotMap {
      * SPEEDS HAVE A MAX VALUE OF 1.0
      * AUTO_DISTANCE IS IN INCHES
      */
-    public static final double AUTO_DISTANCE = 24;
+    public static final double AUTO_DISTANCE = 96;
     public static final double DRIVE_SPEED = 1.0;
-    public static final double CLIMBER_SPEED = 0.6;
+    public static final double CLIMBER_SPEED = 1.0;
     public static final double GEAR_INTAKE_SPEED = 0.7;
     public static final double AUTO_SPEED = 0.5;
 
     public static CANTalon leftSlaveDriveMotor = new CANTalon(0);
-    public static CANTalon leftMasterDriveMotor = new CANTalon(1);
+    public static CANTalon leftMasterDriveMotor = new CANTalon(1);	
     public static CANTalon rightSlaveDriveMotor = new CANTalon(2);
     public static CANTalon rightMasterDriveMotor = new CANTalon(3);
 

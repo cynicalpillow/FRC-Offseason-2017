@@ -19,13 +19,13 @@ public class SmartDashboardPrint extends InstantCommand {
 
     // Called once when the command executes
     protected void initialize() {
-        //SmartDashboard.putNumber("Left Encoder Distance", RobotMap.leftDriveEncoder.getDistance());
-        //SmartDashboard.putNumber("Right Encoder Distance", RobotMap.rightDriveEncoder.getDistance());
+        SmartDashboard.putNumber("Left Encoder Distance", RobotMap.leftDriveEncoder.getDistance());
+        SmartDashboard.putNumber("Right Encoder Distance", RobotMap.rightDriveEncoder.getDistance());
 //        
-       // SmartDashboard.putNumber("Left Encoder Velocity", RobotMap.leftDriveEncoder.getRate());
-       // SmartDashboard.putNumber("Right Encoder Velocity", RobotMap.rightDriveEncoder.getRate());
+        SmartDashboard.putNumber("Left Encoder Velocity", RobotMap.leftDriveEncoder.getRate());
+        SmartDashboard.putNumber("Right Encoder Velocity", RobotMap.rightDriveEncoder.getRate());
     
-        //SmartDashboard.putBoolean("Climber on", Robot.climber.isOn);
+        SmartDashboard.putBoolean("Climber on", Robot.climber.isOn);
     }
 
 }

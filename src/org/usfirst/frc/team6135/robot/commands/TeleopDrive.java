@@ -60,6 +60,7 @@ public class TeleopDrive extends Command {
         double l = Math.max(-RobotMap.DRIVE_SPEED, Math.min(RobotMap.DRIVE_SPEED, y + x));//constrain to [-1,1]
         double r = Math.max(-RobotMap.DRIVE_SPEED, Math.min(RobotMap.DRIVE_SPEED, y - x));
         Robot.drivetrain.setMotorsVBus(l, r);
+        
         //Robot.climber.set(l);
     }
 
