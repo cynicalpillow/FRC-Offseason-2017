@@ -1,0 +1,49 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="wpilib" scope="COMPILE">
+		<srcroot url="file://$wpilib.sources$"/>
+	</lib>
+	<lib name="networktables" scope="COMPILE">
+		<srcroot url="file://$networktables.sources$"/>
+	</lib>
+	<lib name="opencv" scope="COMPILE">
+		<srcroot url="file://$opencv.sources$"/>
+	</lib>
+	<lib name="cscore" scope="COMPILE">
+		<srcroot url="file://$cscore.sources$"/>
+	</lib>
+	<levels>
+		<level name="javadoc" value="project"/>
+		<level name="navx_frc" value="project"/>
+		<level name="CTRLib" value="project"/>
+		<level name="cscore-sources" value="project"/>
+	</levels>
+</component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="wpilib" scope="COMPILE">
+		<srcroot url="file://$wpilib.sources$"/>
+	</lib>
+	<lib name="networktables" scope="COMPILE">
+		<srcroot url="file://$networktables.sources$"/>
+	</lib>
+	<lib name="opencv" scope="COMPILE">
+		<srcroot url="file://$opencv.sources$"/>
+	</lib>
+	<lib name="cscore" scope="COMPILE">
+		<srcroot url="file://$cscore.sources$"/>
+	</lib>
+	<levels>
+		<level name="javadoc" value="project"/>
+		<level name="navx_frc" value="project"/>
+		<level name="CTRLib" value="project"/>
+		<level name="cscore-sources" value="project"/>
+	</levels>
+</component>
+>>>>>>> 2e3d126115a7cf79df69b1d4ae7a8fa7b66ce72c

@@ -1,5 +1,6 @@
 package org.usfirst.frc.team6135.robot;
 
+import org.usfirst.frc.team6135.robot.commands.ChangeDefaultGearSpeed;
 import org.usfirst.frc.team6135.robot.commands.OperateClimber;
 import org.usfirst.frc.team6135.robot.commands.OperateGearIntake;
 import org.usfirst.frc.team6135.robot.commands.StopClimber;
@@ -45,6 +46,7 @@ public class OI {
 	public static JoystickButton climberClockwise;
 	public static JoystickButton climberCounterClockwise;
 	public static JoystickButton gearIntake;
+	public static JoystickButton toggleGearDefaultSpeed;
 	public OI(){
 		xboxController = new Joystick(0);
 		climberClockwise = new JoystickButton(xboxController, 5);
@@ -55,6 +57,8 @@ public class OI {
 		climberCounterClockwise.whenPressed(new OperateClimber(-1, RobotMap.CLIMBER_SPEED));
 		climberCounterClockwise.whenReleased(new StopClimber());
 		gearIntake.toggleWhenPressed(new OperateGearIntake(RobotMap.GEAR_INTAKE_SPEED));
+		toggleGearDefaultSpeed = new JoystickButton(xboxController, 3);
+		toggleGearDefaultSpeed.toggleWhenPressed(new ChangeDefaultGearSpeed());
 	}
 	public double applyDeadzone(double val, double dzLimit) {
     	return (Math.abs(val) > Math.abs(dzLimit)) ? val : 0.0;
