@@ -33,7 +33,7 @@ public class Robot extends IterativeRobot {
     public static Climber climber;
     public static GearIntake gearIntake;
     public static SendableChooser<Command> autoChooser;
-    //public static SmartDashboardPrint smartDashboardPrint;
+    public static SmartDashboardPrint smartDashboardPrint;
 
 	Command autonomousCommand;
 //	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -123,6 +123,7 @@ public class Robot extends IterativeRobot {
         // teleop starts running. If you want the autonomous to
         // continue until interrupted by another command, remove
         // this line or comment it out.
+    	smartDashboardPrint = new SmartDashboardPrint();
 		if (autonomousCommand != null)
 			autonomousCommand.cancel();
     	
@@ -135,14 +136,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         SmartDashboard.putNumber("Climber speed", RobotMap.climberMotor.getSpeed());
-        //smartDashboardPrint = new SmartDashboardPrint();
-        SmartDashboard.putNumber("Left Encoder Distance", RobotMap.leftDriveEncoder.getDistance());
-        SmartDashboard.putNumber("Right Encoder Distance", RobotMap.rightDriveEncoder.getDistance());
-//        
-        SmartDashboard.putNumber("Left Encoder Velocity", RobotMap.leftDriveEncoder.getRate());
-        SmartDashboard.putNumber("Right Encoder Velocity", RobotMap.rightDriveEncoder.getRate());
-    
-        SmartDashboard.putBoolean("Climber on", Robot.climber.isOn);
+        smartDashboardPrint.start();
     }
 
     /**
