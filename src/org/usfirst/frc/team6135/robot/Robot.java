@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team6135.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.Timer;
@@ -45,14 +46,21 @@ public class Robot extends IterativeRobot {
     @Override
     public void robotInit() {
         RobotMap.init();
+        
         smartdashboard = new SmartDashboard();
         drivetrain = new Drivetrain();
         climber = new Climber();
         gearIntake = new GearIntake();
+        
         autoChooser = new SendableChooser<Command>();
-        autoChooser.addObject("Drive past baseline", new DriveStraightDistance(RobotMap.AUTO_DISTANCE));
+        autoChooser.addObject("Drive past baseline", new DriveTime(1));
         SmartDashboard.putData("Autonomous", autoChooser);
+        
         oi = new OI();
+        
+        //Camera feed initialization
+        CameraServer.getInstance().startAutomaticCapture();
+        
 //		chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
 //		SmartDashboard.putData("Auto mode", chooser);

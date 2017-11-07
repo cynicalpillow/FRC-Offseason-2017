@@ -3,6 +3,7 @@ package org.usfirst.frc.team6135.robot;
 import org.usfirst.frc.team6135.robot.commands.ChangeDefaultGearSpeed;
 import org.usfirst.frc.team6135.robot.commands.OperateClimber;
 import org.usfirst.frc.team6135.robot.commands.OperateGearIntake;
+import org.usfirst.frc.team6135.robot.commands.PrecisionToggle;
 import org.usfirst.frc.team6135.robot.commands.StopClimber;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -47,18 +48,27 @@ public class OI {
 	public static JoystickButton climberCounterClockwise;
 	public static JoystickButton gearIntake;
 	public static JoystickButton toggleGearDefaultSpeed;
+	public static JoystickButton togglePrecisionMode;
 	public OI(){
 		xboxController = new Joystick(0);
+		
+		//Climber
 		climberClockwise = new JoystickButton(xboxController, 5);
 		climberCounterClockwise = new JoystickButton(xboxController, 6);
-		gearIntake = new JoystickButton(xboxController, 4);
 		climberClockwise.whenPressed(new OperateClimber(1, RobotMap.CLIMBER_SPEED));
 		climberClockwise.whenReleased(new StopClimber());
 		climberCounterClockwise.whenPressed(new OperateClimber(-1, RobotMap.CLIMBER_SPEED));
 		climberCounterClockwise.whenReleased(new StopClimber());
+		
+		//Gear intake
+		gearIntake = new JoystickButton(xboxController, 4);
 		gearIntake.toggleWhenPressed(new OperateGearIntake(RobotMap.GEAR_INTAKE_SPEED));
+		
+		//Toggle buttons
 		toggleGearDefaultSpeed = new JoystickButton(xboxController, 3);
-		toggleGearDefaultSpeed.toggleWhenPressed(new ChangeDefaultGearSpeed());
+		toggleGearDefaultSpeed.whenReleased(new ChangeDefaultGearSpeed());
+		togglePrecisionMode = new JoystickButton(xboxController, 2);
+		togglePrecisionMode.whenReleased(new PrecisionToggle());
 	}
 	public double applyDeadzone(double val, double dzLimit) {
     	return (Math.abs(val) > Math.abs(dzLimit)) ? val : 0.0;

@@ -42,6 +42,7 @@ public class RobotMap {
     public static final double GEAR_INTAKE_SPEED = 0.7;
     public static double GEAR_INTAKE_DEFAULT_SPEED = 0;
     public static final double AUTO_SPEED = 0.5;
+    public static double PRECISION_SCALAR = 1.0;
 
     public static CANTalon leftSlaveDriveMotor = new CANTalon(0);
     public static CANTalon leftMasterDriveMotor = new CANTalon(1);	
